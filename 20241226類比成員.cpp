@@ -9,7 +9,7 @@ class myTime{
 		bool validTime(int h, int m);
     public:
 		bool setTime(int h, int m);
-		int getHour(){freturn hour;}
+		int getHour(){return hour;}
 		int getMinute(){return minute;}
 		void printTime();
 };
@@ -23,10 +23,26 @@ bool myTime::setTime(int h, int m){
 	if(validTime(h,m)){
 	    hour = h;
 	    minute = m;
-	    return ture;
+	    return true;
 	}
 	else return false;	
 }
 void myTime::printTime(){
-	cont<<hour<<":"<<minute<<"\n";
+	cout<<hour<<":"<<minute<<"\n";
+}
+
+main(){
+	myTime open, close, now;
+	int h, m;
+	open.setTime(10,30);
+	close.setTime(17,30);
+	now.setTime(13,28);
+	cout<<"開張時間:";
+	open.printTime();
+	cout<<"結束時間:";
+	close.printTime();
+	h = now.getHour();
+	m = now.getMinute();
+	cout<<"現在時間:";
+	cout<<h<<":"<<m<<"\n";		
 }   
